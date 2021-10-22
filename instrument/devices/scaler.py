@@ -3,6 +3,7 @@ example scaler
 """
 
 __all__ = [
+	synDiode
     # "scaler1",
     # "timebase",
     # "I0",
@@ -16,6 +17,9 @@ logger.info(__file__)
 
 from ophyd.scaler import ScalerCH
 from ophyd import Kind
+from ophyd.sim import SynSignalRO
+
+synDiode = SynSignalRO()
 
 # # make an instance of the entire scaler, for general control
 # scaler1 = ScalerCH("ioc:scaler1", name="scaler1", labels=["scalers", "detectors"])
