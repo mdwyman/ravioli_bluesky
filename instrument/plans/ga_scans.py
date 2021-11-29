@@ -1,3 +1,8 @@
+__all__ = """
+    create_start_population
+    ga_scan
+""".split()
+
 import inspect
 from itertools import chain, zip_longest
 from functools import partial
@@ -12,17 +17,15 @@ try:
 except ImportError:
     from toolz import partition
 
-from . import plan_patterns
+from bluesky import utils, plan_patterns
+from bluesky.utils import Msg
 
-from . import utils
-from .utils import Msg
-
-from . import preprocessors as bpp
-from . import plan_stubs as bps
+from bluesky import preprocessors as bpp
+from bluesky import plan_stubs as bps
 
 
 
-def create_start_population(population_size, motor_info, mode = , previous_best = None):
+def create_start_population(population_size, motor_info, mode = 'gaussian', previous_best = None):
     """
     Create starting population
     

@@ -1,0 +1,19 @@
+|2021-11-17 06:03:00.269|INFO|194696|bluesky-session|session_logs|35|MainThread| - ############################################################ startup
+|2021-11-17 06:03:00.269|INFO|194696|bluesky-session|session_logs|36|MainThread| - logging started
+|2021-11-17 06:03:00.269|INFO|194696|bluesky-session|session_logs|37|MainThread| - logging level = 10
+|2021-11-17 06:03:00.269|INFO|194696|bluesky-session|collection|7|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/collection.py
+|2021-11-17 06:03:00.277|INFO|194696|bluesky-session|console|11|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/mpl/console.py
+|2021-11-17 06:03:02.498|INFO|194696|bluesky-session|collection|11|MainThread| - bluesky framework
+|2021-11-17 06:03:02.506|INFO|194696|bluesky-session|check_python|9|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/check_python.py
+|2021-11-17 06:03:02.508|INFO|194696|bluesky-session|check_bluesky|9|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/check_bluesky.py
+|2021-11-17 06:03:05.660|INFO|194696|bluesky-session|initialize|15|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/initialize.py
+|2021-11-17 06:03:14.952|INFO|194696|bluesky-session|metadata|9|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/metadata.py
+|2021-11-17 06:03:15.012|INFO|194696|bluesky-session|callbacks|13|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/callbacks.py
+|2021-11-17 06:03:15.925|INFO|194696|bluesky-session|callbacks|29|MainThread| - writing to SPEC file: /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/20211117-060315.dat
+|2021-11-17 06:03:15.925|INFO|194696|bluesky-session|callbacks|30|MainThread| -    >>>>   Using default SPEC file name   <<<<
+|2021-11-17 06:03:15.925|INFO|194696|bluesky-session|callbacks|31|MainThread| -    file will be created when bluesky ends its next scan
+|2021-11-17 06:03:15.925|INFO|194696|bluesky-session|callbacks|32|MainThread| -    to change SPEC file, use command:   newSpecFile('title')
+|2021-11-17 06:03:15.975|INFO|194696|bluesky-session|motors|14|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/motors.py
+|2021-11-17 06:03:16.075|INFO|194696|bluesky-session|scaler|16|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/scaler.py
+|2021-11-17 06:03:16.269|INFO|194696|bluesky-session|adSimDet|19|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/adSimDet.py
+|2021-11-17 06:03:16.273|INFO|194696|bluesky-session|shadowDet|8|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/shadowDet.py
