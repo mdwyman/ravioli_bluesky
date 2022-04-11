@@ -36,6 +36,7 @@ acquire_PV = '100idWYM:simDet:cam1:Acquire'
 camMode_PV = '100idWYM:simDet:cam1:ImageMode'
 pos_readback_PV = '100idWYM:scan1.P1RA'
 t_readback_PV = '100idWYM:scan1.P4RA'
+pts_readback_PV = '100idWYM:scan1.CPTS'
 
 class scanRecFlyer(Device):
     
@@ -70,7 +71,8 @@ class scanRecFlyer(Device):
         self.trigger_PV = trigger_PV
         self.acquire_PV = acquire_PV
         self.camMode_PV = camMode_PV
-
+        self.scanPt_PV = pts_readback_PV
+        
         '''
         self.monitor = EpicsSignalRO(self.monitor_PV, name = 'scanMonitor') # != 1 not scanning, == 1 scanning
         self.start_program = EpicsSignal(self.trigger_PV, name = 'scanTrigger') # set to 1 to start
@@ -91,6 +93,7 @@ class scanRecFlyer(Device):
         self.npts = EpicsSignal(self.npts_PV, name = 'number_pts') # set to 1 to start
         self.positions = EpicsSignalRO(self.pos_readback_PV, name = 'scanPositions') # != 1 not scanning, == 1 scanning
         self.times = EpicsSignalRO(self.tim_readback_PV, name = 'scanTimes') # != 1 not scanning, == 1 scanning
+        self.scanPt = EpicsSignalRO(self.scanPt_PV, name = 'scanPt') # != 1 not scanning, == 1 scanning
         self.mode = EpicsSignal(self.mode_PV, name = 'scanMode') # generally set to 5 for snake scans
         self.cam_acquire = EpicsSignal(self.acquire_PV, name = 'camTrigger')
         self.camMode = EpicsSignal(self.camMode_PV, name = 'camMode')
@@ -109,6 +112,10 @@ class scanRecFlyer(Device):
  
     def unstage(self):
         super().unstage()
+
+        self.cam_acquire.unsubscribe(self.acquire_cb)
+        self.monitor.unsubscribe(self.monitor_cb)
+
         print('Flyer unstaged.')
 
     def kickoff(self):
@@ -132,11 +139,13 @@ class scanRecFlyer(Device):
             #add callback functions to set complete after fly scan trajectory
             #and detector acquisition complete
             def cb(*args, **kwargs):
-                    if not self.monitor.get() and not self.cam_acquire.get():
-                        self.complete_status._finished(success=True)
-
-            self.monitor.subscribe(cb)
-            self.cam_acquire.subscribe(cb)
+                if not self.monitor.get() and not self.cam_acquire.get():
+                    self.complete_status._finished(success=True)
+                    print('\n Fly scan callback triggered.')
+                    #self.complete_status.set_finished()
+ 
+            self.monitor_cb = self.monitor.subscribe(cb)
+            self.acquire_cb = self.cam_acquire.subscribe(cb)
 
             self.t0 = time.time()
             
@@ -150,8 +159,14 @@ class scanRecFlyer(Device):
         Wait for flying to be complete
         """
         logger.info("complete(): " + str(self.complete_status))
-#        if self.complete_status:
-#            print("Fly scan completed")
+        print('Complete function run: '+str(self.complete_status))
+        if self.complete_status.success:
+            print('Unsubscribing callbacks {} and {}.'.format(self.acquire_cb, self.monitor_cb))
+            # Moved the unsubscribes because the complete function wasn't being called
+#            self.cam_acquire.unsubscribe(self.acquire_cb)
+#            self.monitor.unsubscribe(self.monitor_cb)
+            print("Fly scan completed")
+
         return self.complete_status
 
     def describe_collect(self):
@@ -179,19 +194,24 @@ class scanRecFlyer(Device):
         Start this Flyer
         """
         logger.info("collect(): " + str(self.complete_status))
-        print("Fly scan complete. Collecting data")
-        self.complete_status = None
+        print("Collecting data")
         self.t1 = time.time()
         
-        t = self.times.value
-        x = self.positions.value
+        # x, t are the possitions and times recorded by the scan record
+#        t = self.times.value
+#        x = self.positions.value
+        
+        # testing a simpler dataset: start time, end time, number of points
+        t = [0, self.t1 - self.t0]
+        x = [0, self.npts.value]
         
         # In general, put d assignment in for loop with yield within said loop
         # at end.  Collect will then yield a single time point + whatever data
         # is wanted at that point.  Later on should use flyer's position data?
-        for i in range(self.npts.value):
+#        for i in range(self.npts.value):
+        for i in range(2):
             d = dict(
-                time=time.time(),
+                time=self.t0 + t[i],
                 data=dict(
                     ifly_tArr = t[i],
                     ifly_xArr = x[i],

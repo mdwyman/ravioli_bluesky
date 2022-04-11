@@ -4,7 +4,8 @@ SNAME=$0
 SELECTION=$1 
 
 export CONDA_ACTIVATE=/APSshare/miniconda/x86_64/bin/activate
-export CONDA_ENVIRONMENT=bluesky_2021_1
+#export CONDA_ENVIRONMENT=bluesky_2021_1
+export CONDA_ENVIRONMENT=bluesky_2021_2
 # bluesky
 
 export IPYTHON_PROFILE=bluesky

@@ -17,3 +17,41 @@
 |2021-11-17 06:03:16.075|INFO|194696|bluesky-session|scaler|16|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/scaler.py
 |2021-11-17 06:03:16.269|INFO|194696|bluesky-session|adSimDet|19|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/adSimDet.py
 |2021-11-17 06:03:16.273|INFO|194696|bluesky-session|shadowDet|8|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/shadowDet.py
+|2022-02-15 15:13:11.587|INFO|3184819|bluesky-session|session_logs|35|MainThread| - ############################################################ startup
+|2022-02-15 15:13:11.587|INFO|3184819|bluesky-session|session_logs|36|MainThread| - logging started
+|2022-02-15 15:13:11.587|INFO|3184819|bluesky-session|session_logs|37|MainThread| - logging level = 10
+|2022-02-15 15:13:11.587|INFO|3184819|bluesky-session|collection|7|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/collection.py
+|2022-02-15 15:13:11.593|INFO|3184819|bluesky-session|console|11|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/mpl/console.py
+|2022-02-15 15:13:13.203|INFO|3184819|bluesky-session|collection|11|MainThread| - bluesky framework
+|2022-02-15 15:13:13.209|INFO|3184819|bluesky-session|check_python|9|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/check_python.py
+|2022-02-15 15:13:13.211|INFO|3184819|bluesky-session|check_bluesky|9|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/check_bluesky.py
+|2022-02-15 15:13:15.276|INFO|3184819|bluesky-session|initialize|15|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/initialize.py
+|2022-02-15 15:13:19.262|INFO|3184819|bluesky-session|metadata|9|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/metadata.py
+|2022-02-15 15:13:19.301|INFO|3184819|bluesky-session|callbacks|13|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/callbacks.py
+|2022-02-15 15:13:19.723|INFO|3184819|bluesky-session|callbacks|29|MainThread| - writing to SPEC file: /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/20220215-151319.dat
+|2022-02-15 15:13:19.723|INFO|3184819|bluesky-session|callbacks|30|MainThread| -    >>>>   Using default SPEC file name   <<<<
+|2022-02-15 15:13:19.723|INFO|3184819|bluesky-session|callbacks|31|MainThread| -    file will be created when bluesky ends its next scan
+|2022-02-15 15:13:19.723|INFO|3184819|bluesky-session|callbacks|32|MainThread| -    to change SPEC file, use command:   newSpecFile('title')
+|2022-02-15 15:13:19.748|INFO|3184819|bluesky-session|motors|14|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/motors.py
+|2022-02-15 15:13:19.841|INFO|3184819|bluesky-session|scaler|16|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/scaler.py
+|2022-02-15 15:13:19.986|INFO|3184819|bluesky-session|adSimDet|20|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/adSimDet.py
+|2022-02-15 15:13:19.990|INFO|3184819|bluesky-session|shadowDet|8|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/shadowDet.py
+|2022-02-15 16:13:45.032|INFO|3199751|bluesky-session|session_logs|35|MainThread| - ############################################################ startup
+|2022-02-15 16:13:45.032|INFO|3199751|bluesky-session|session_logs|36|MainThread| - logging started
+|2022-02-15 16:13:45.032|INFO|3199751|bluesky-session|session_logs|37|MainThread| - logging level = 10
+|2022-02-15 16:13:45.032|INFO|3199751|bluesky-session|collection|7|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/collection.py
+|2022-02-15 16:13:45.038|INFO|3199751|bluesky-session|console|11|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/mpl/console.py
+|2022-02-15 16:13:46.301|INFO|3199751|bluesky-session|collection|11|MainThread| - bluesky framework
+|2022-02-15 16:13:46.306|INFO|3199751|bluesky-session|check_python|9|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/check_python.py
+|2022-02-15 16:13:46.307|INFO|3199751|bluesky-session|check_bluesky|9|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/check_bluesky.py
+|2022-02-15 16:13:48.144|INFO|3199751|bluesky-session|initialize|15|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/initialize.py
+|2022-02-15 16:13:53.337|INFO|3199751|bluesky-session|metadata|9|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/metadata.py
+|2022-02-15 16:13:53.378|INFO|3199751|bluesky-session|callbacks|13|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/framework/callbacks.py
+|2022-02-15 16:13:53.814|INFO|3199751|bluesky-session|callbacks|29|MainThread| - writing to SPEC file: /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/20220215-161353.dat
+|2022-02-15 16:13:53.814|INFO|3199751|bluesky-session|callbacks|30|MainThread| -    >>>>   Using default SPEC file name   <<<<
+|2022-02-15 16:13:53.814|INFO|3199751|bluesky-session|callbacks|31|MainThread| -    file will be created when bluesky ends its next scan
+|2022-02-15 16:13:53.814|INFO|3199751|bluesky-session|callbacks|32|MainThread| -    to change SPEC file, use command:   newSpecFile('title')
+|2022-02-15 16:13:53.820|INFO|3199751|bluesky-session|motors|14|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/motors.py
+|2022-02-15 16:13:53.983|INFO|3199751|bluesky-session|scaler|16|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/scaler.py
+|2022-02-15 16:13:54.131|INFO|3199751|bluesky-session|adSimDet|20|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/adSimDet.py
+|2022-02-15 16:13:54.137|INFO|3199751|bluesky-session|shadowDet|8|MainThread| - /home/beams2/MWYMAN/.ipython-bluesky/profile_bluesky/startup/instrument/devices/shadowDet.py

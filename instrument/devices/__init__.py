@@ -7,3 +7,4 @@ local, custom Device definitions
 from .motors import *
 from .scaler import *
 from .flyers import *
+from .shutters import *
