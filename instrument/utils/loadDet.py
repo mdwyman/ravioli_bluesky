@@ -9,11 +9,11 @@ __all__ = """
 
 from ..devices.adSimDet import LocalSimDetSingle, LocalSimDetMulti
 from ..devices.shadowDet import ShadowDetector
+from ..devices.shutters import shutterA, shutterB
 
-
-junk_phase_template = [('junk', {'shutter_control':0})]                                                                      
-dark_phase_template = [('dark', {'shutter_control':0})]                                                                      
-light_phase_template = [('light', {'shutter_control':1})]
+junk_phase_template = [('junk', {shutterA:0})]                                                                      
+dark_phase_template = [('dark', {shutterA:0})]                                                                      
+light_phase_template = [('light', {shutterA:1})]
 
 default_n_junk = 2      
 default_n_dark = 10
@@ -23,16 +23,19 @@ default_cycle = [junk_phase_template*default_n_junk +
                  dark_phase_template*default_n_dark +
                  light_phase_template*default_n_light]
 
-def reset_dark_light_cycle(n_junk, n_dark, n_light, shutter_sig, shutter_mode_sig,
-                           num_images_sig, openVal = 1, closedVal = 0):
+def reset_dark_light_cycle(n_junk, n_dark, n_light, num_images_sig,
+                           shutter_sig = shutterA.setpoint, openVal = 1, closedVal = 0):
 
-    junk_phase_template = [('junk', {shutter_sig:closedVal, shutter_mode_sig:0, num_images_sig:n_junk})]                                                                      
-    dark_phase_template = [('dark', {shutter_sig:closedVal, shutter_mode_sig:0, num_images_sig:n_dark})]                                                                      
-    light_phase_template = [('light', {shutter_sig:openVal, shutter_mode_sig:1, num_images_sig:n_light})]
+    junk_phase_template = [('junk', {shutter_sig:closedVal, num_images_sig:n_junk})]                                                                      
+    dark_phase_template = [('dark', {shutter_sig:closedVal, num_images_sig:n_dark})]                                                                      
+    light_phase_template = [('light', {shutter_sig:openVal, num_images_sig:n_light})]
     
+    trig_cycle = [junk_phase_template + dark_phase_template + light_phase_template]
+    
+#    print('Loaded cycle: ')
+#    print(trig_cycle)
 
-    return [junk_phase_template + dark_phase_template + light_phase_template]
-
+    return trig_cycle
 
 
 def loadSimDet(prefix="100idWYM:", multi = False, trigger_cycle = default_cycle):
@@ -58,8 +61,8 @@ def loadSimDet(prefix="100idWYM:", multi = False, trigger_cycle = default_cycle)
 #            simDet.trigger_cycle = reset_dark_light_cycle(default_n_junk, default_n_dark,
 #                                                          default_n_light, simDet.cam.shutter_control)
             simDet.trigger_cycle = reset_dark_light_cycle(default_n_junk, default_n_dark,
-                                                          default_n_light, simDet.cam.shutter_control,
-                                                          simDet.cam.shutter_mode, simDet.cam.num_images)
+                                                          default_n_light, simDet.cam.num_images, 
+                                                          shutter_sig = shutterA.setpoint)
     else:
         simDet.cam.stage_sigs["image_mode"] = "Single"
         simDet.cam.stage_sigs["num_images"] = 1

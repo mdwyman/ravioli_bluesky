@@ -1,7 +1,7 @@
 from ophyd import Device, EpicsSignal, EpicsSignalRO, Signal, SignalRO
 from ophyd import Component as Cpt
 from ophyd.status import DeviceStatus
-from apstools.devices import ShutterBase
+from apstools.devices import ShutterBase, OneSignalShutter
 import time
 
 __all__ = """
@@ -20,15 +20,12 @@ class SoftShutter(ShutterBase):
             if self.delay_s > 0:
                 time.sleep(self.delay_s)    # blocking call OK here
         
-        
     def close(self):
         if not self.isClosed:
             self.setpoint.put(self.close_value)
             if self.delay_s > 0:
                 time.sleep(self.delay_s)    # blocking call OK here
-        
-        
-        
+       
     def state(self):
         if self.readback.get() == self.open_value:
             result = self.valid_open_values[0]
